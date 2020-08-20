@@ -13,8 +13,8 @@ The functionality of the app itself would be a useful way to make sure important
   - JDBC
   - H2 DB
 - Angular 10.0.11
-  -CLI
-  -Materials
+  - CLI
+  - Materials
 - Amazon Web Services
   - TBD (most likely to be hosted by Elastic Beanstalk)
 - Node 12.18.3
