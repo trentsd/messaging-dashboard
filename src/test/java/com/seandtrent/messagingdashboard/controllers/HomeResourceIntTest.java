@@ -34,29 +34,29 @@ public class HomeResourceIntTest {
   }
 
   /**
-   * No authentication. Everything behind /user should be 401 Unauthorized.
+   * No authentication. Everything behind /resource should be 200 OK.
    */
   @Test
-  public void noAuthRequestOn_USER_Service_shouldFailWith401() throws Exception {
-    mvc.perform(get("/user")).andExpect(status().isUnauthorized());
+  public void noAuthRequestOn_HOME_Service_shouldSucceedWith200() throws Exception {
+    mvc.perform(get("/resource")).andExpect(status().isOk());
   }
 
   /**
-   * Authorized as a USER. Everthing behind /user should be 200 OK.
+   * Authorized as a USER. Everthing behind /resource should be 200 OK.
    */
   @Test
   @WithMockUser(username = "user", roles = {"USER"})
-  public void given_USER_AuthRequestOn_USER_Service_shouldSucceedWith200() throws Exception {
-    mvc.perform(get("/user")).andExpect(status().isOk());
+  public void given_USER_AuthRequestOn_HOME_Service_shouldSucceedWith200() throws Exception {
+    mvc.perform(get("/resource")).andExpect(status().isOk());
   }
 
   /**
-   * Authorized as a ADMIN. Everthing behind /user should be 200 OK.
+   * Authorized as a ADMIN. Everthing behind /resource should be 200 OK.
    */
   @Test
   @WithMockUser(username = "admin", roles = {"ADMIN"})
-  public void given_ADMIN_AuthRequestOn_USER_Service_shouldSucceedWith200() throws Exception {
-    mvc.perform(get("/user")).andExpect(status().isOk());
+  public void given_ADMIN_AuthRequestOn_HOME_Service_shouldSucceedWith200() throws Exception {
+    mvc.perform(get("/resource")).andExpect(status().isOk());
   }
 
 }
