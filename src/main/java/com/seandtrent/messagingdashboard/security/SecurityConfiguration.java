@@ -33,27 +33,20 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter{
    * Configures authentication.
    * Checks the provided DataSource object for user credentials.
    *
-   * dataSource automatically points to the embedded H2 database
-   * configured to Spring Security's default jdbc implementation of
-   * the UserDetailsService: Users table and Authorites table.
+   * dataSource automatically points to the embedded H2 database.
+   * The database is configured and populated by schema.sql and data.sql in main/resources.
    *
-   * For now, we are creating a couple of test users here.
    */
   @Override
   protected void configure(AuthenticationManagerBuilder auth) throws Exception {
     auth.jdbcAuthentication()
       .dataSource(dataSource)
-      .withDefaultSchema()
-      .withUser(
-        User.withUsername("user")
-        .password("pass")
-        .roles("USER")
-      )
-      .withUser(
-        User.withUsername("admin")
-        .password("pass")
-        .roles("ADMIN")
-      );
+      .usersByUsernameQuery("select username,password,enabled "
+        + "from users "
+        + "where username = ?")
+      .authoritiesByUsernameQuery("select username,authority "
+        + "from authorities "
+        + "where username = ?");
   }
 
   /**
