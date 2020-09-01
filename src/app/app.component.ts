@@ -13,7 +13,9 @@ export class AppComponent {
   title = 'Demo';
   greeting: any;
 
-  constructor(private app: AppService, private http: HttpClient, private router: Router) {}
+  constructor(private app: AppService, private http: HttpClient, private router: Router) {
+    this.app.authenticate(undefined, undefined);
+  }
 
   public isMenuCollapsed = false;
 
@@ -25,7 +27,6 @@ export class AppComponent {
       })).subscribe();
   }
 
-  ngOnInit() {
-    this.app.authenticate(undefined, undefined);
+  ngOnInit(): void {
   }
 }
