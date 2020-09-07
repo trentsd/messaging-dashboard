@@ -13,13 +13,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { MyaccountComponent } from './myaccount/myaccount.component';
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     LoginComponent,
-    MyaccountComponent
+    MyaccountComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
