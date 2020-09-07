@@ -13,6 +13,8 @@ export class AppComponent {
   title = 'Demo';
   greeting: any;
 
+  authenticated() { return this.app.authenticated; }
+
   constructor(private app: AppService, private http: HttpClient, private router: Router) {
     this.app.authenticate(undefined, undefined);
   }
