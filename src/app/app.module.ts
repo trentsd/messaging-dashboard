@@ -14,6 +14,7 @@ import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { MyaccountComponent } from './myaccount/myaccount.component';
 import { RegisterComponent } from './register/register.component';
+import { UserTableComponent } from './home/user-table/user-table.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { RegisterComponent } from './register/register.component';
     HomeComponent,
     LoginComponent,
     MyaccountComponent,
-    RegisterComponent
+    RegisterComponent,
+    UserTableComponent
   ],
   imports: [
     BrowserModule,
