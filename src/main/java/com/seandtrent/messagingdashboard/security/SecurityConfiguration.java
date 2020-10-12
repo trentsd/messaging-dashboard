@@ -62,12 +62,15 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter{
       .httpBasic()
     .and()
       .authorizeRequests()
-        .antMatchers("/admin").hasRole("ADMIN")
+        .antMatchers("/admin", "/h2-console/*").hasRole("ADMIN")
         .antMatchers("/user").hasAnyRole("ADMIN", "USER")
         .antMatchers("/index.html", "/*", "/home*", "/login*").permitAll()
         .anyRequest().authenticated()
     .and().csrf()
       .csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse());
+    //TODO: TAKE THESE OFF. This is for development only
+    http.csrf().disable();
+    http.headers().frameOptions().disable();
   }
 
   /**

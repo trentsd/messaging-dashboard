@@ -1,4 +1,5 @@
 create table users(
+    id bigint(20) not null auto_increment,
     username varchar_ignorecase(50) not null primary key,
     email varchar_ignorecase(50) not null,
     password varchar_ignorecase(50) not null,
