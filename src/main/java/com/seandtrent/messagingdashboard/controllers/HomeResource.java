@@ -19,7 +19,7 @@ public class HomeResource {
    * TODO: Replace placeholder functionality
    * @return just placeholder html for now
    */
-  @GetMapping("/resource")
+  @GetMapping("/home")
   public Map<String, Object> home() {
     Map<String, Object> model = new HashMap<String, Object>();
     model.put("id", UUID.randomUUID().toString());

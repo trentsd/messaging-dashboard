@@ -26,7 +26,7 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     if (this.authenticated()) {
-    this.http.get('resource').subscribe((data: Greeting) =>
+    this.http.get('home').subscribe((data: Greeting) =>
       this.greeting = data
       );
     }
