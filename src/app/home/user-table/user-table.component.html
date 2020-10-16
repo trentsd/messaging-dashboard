@@ -11,5 +11,10 @@
       <th scope="col">Platforms</th>
     </tr>
     </thead>
+    <tbody>
+      <tr *ngFor="let user of userList">
+        <th scope="row">{{ user.USERNAME }}</th>
+      </tr>
+    </tbody>
   </table>
 </form>
