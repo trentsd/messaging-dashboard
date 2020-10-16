@@ -26,7 +26,7 @@ public class HomeResource {
    * TODO: Replace placeholder functionality
    * @return just placeholder html for now
    */
-  @GetMapping("/home")
+  @GetMapping("home/api")
   public List<Map<String, Object>> home() {
     return jdbcTemplate.queryForList("select username "
                                 + "from users");

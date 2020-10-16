@@ -64,7 +64,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter{
       .authorizeRequests()
         .antMatchers("/admin", "/h2-console/*").hasRole("ADMIN")
         .antMatchers("/user").hasAnyRole("ADMIN", "USER")
-        .antMatchers("/index.html", "/*", "/home*", "/login*").permitAll()
+        .antMatchers("/index.html", "/*", "/home/*", "/login/*").permitAll()
         .anyRequest().authenticated()
     .and().csrf()
       .csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse());
