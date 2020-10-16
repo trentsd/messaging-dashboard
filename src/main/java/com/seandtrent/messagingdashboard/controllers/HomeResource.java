@@ -30,11 +30,6 @@ public class HomeResource {
   public List<Map<String, Object>> home() {
     return jdbcTemplate.queryForList("select username "
                                 + "from users");
-
-    // Map<String, Object> model = new HashMap<String, Object>();
-    // model.put("id", UUID.randomUUID().toString());
-    // model.put("content", "Hello World");
-    // return model;
-}
+  }
 
 }
