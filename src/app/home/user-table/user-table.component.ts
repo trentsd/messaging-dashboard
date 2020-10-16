@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { User } from 'src/app/shared/interfaces/user.model';
 
 @Component({
   selector: 'app-user-table',
@@ -8,6 +9,8 @@ import { Component, OnInit } from '@angular/core';
 export class UserTableComponent implements OnInit {
 
   constructor() { }
+
+  @Input() userList: Array<User>
 
   ngOnInit(): void {
   }
