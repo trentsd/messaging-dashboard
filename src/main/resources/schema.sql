@@ -1,7 +1,7 @@
 create table users(
     username varchar_ignorecase(50) not null primary key,
     email varchar_ignorecase(50) not null,
-    password varchar_ignorecase(50) not null,
+    password varchar(50) not null,
     enabled boolean not null
 );
 
