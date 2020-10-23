@@ -4,4 +4,5 @@
  */
 export interface User {
   USERNAME: string;
+  DISPLAY_NAME: string;
 }

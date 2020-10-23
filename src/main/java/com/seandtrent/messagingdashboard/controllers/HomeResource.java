@@ -28,7 +28,7 @@ public class HomeResource {
    */
   @GetMapping("home/api")
   public List<Map<String, Object>> home() {
-    return jdbcTemplate.queryForList("select username "
+    return jdbcTemplate.queryForList("select username, display_name "
                                 + "from users");
   }
 
