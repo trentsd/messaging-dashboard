@@ -1,6 +1,6 @@
 create table users(
     username varchar_ignorecase(50) not null primary key,
-    email varchar_ignorecase(50) not null,
+    display_name varchar_ignorecase(50) not null,
     password varchar(50) not null,
     enabled boolean not null
 );
@@ -11,3 +11,10 @@ create table authorities (
     constraint fk_authorities_users foreign key(username) references users(username)
 );
 create unique index ix_auth_username on authorities (username, authority);
+
+create table emails (
+  username varchar_ignorecase(50) not null,
+  email varchar_ignorecase(50),
+  constraint fk_emails_users foreign key(username) references users(username)
+);
+create unique index ix_email_username on emails (username, email);
